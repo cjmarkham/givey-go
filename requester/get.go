@@ -43,7 +43,6 @@ func GetUsers (page string, limit string) ( error, Users ) {
   if limit != "" {
     url = url + "&limit=" + limit
   }
-  log.Println(url)
 
   resp, err := client.Get(url)
 
