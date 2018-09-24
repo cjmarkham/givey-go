@@ -1,17 +1,20 @@
 package requester
 
 import (
-  "log"
   "net/http"
   "encoding/json"
   "time"
-  "github.com/givey/givey-go/config"
   "github.com/givey/givey-go/models"
   "io"
 )
 
 var accessToken string
 var client http.Client
+
+const (
+  HOST string = "https://api-staging.givey.com"
+  VERSION string = "v3"
+)
 
 func init () {
   accessToken = "gozNuicwGrfIVsBNFqKJ5ABDex7ghDuKft1MdMjf"
@@ -21,12 +24,7 @@ func init () {
 }
 
 func baseUrl () string {
-  err, data := config.Load()
-  if err != nil {
-    log.Fatal(err.Error())
-  }
-
-  return data.Host + "/" + data.Version
+  return HOST + "/" + VERSION
 }
 
 type Users struct {
