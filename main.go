@@ -30,10 +30,7 @@ func getPage (request *http.Request) string {
 func getLimit (request *http.Request) string {
   url := request.URL
   query := url.Query()
-
-  limit := query.Get("limit")
-
-  return string(limit)
+  return string(query.Get("limit"))
 }
 
 func getUsers (writer http.ResponseWriter, request *http.Request) {
