@@ -7,8 +7,7 @@ import (
   "github.com/givey/givey-go/requester"
 )
 
-func main () {
-  requester.Init()
+func main() {
   router := mux.NewRouter()
   router.HandleFunc("/users/{username:[a-zA-Z0-9]+}", getUser)
   router.HandleFunc("/users", getUsers)

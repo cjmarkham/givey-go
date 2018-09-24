@@ -13,7 +13,7 @@ import (
 var accessToken string
 var client http.Client
 
-func Init () {
+func init () {
   accessToken = "gozNuicwGrfIVsBNFqKJ5ABDex7ghDuKft1MdMjf"
   client = http.Client{
     Timeout: time.Duration(5 * time.Second),
